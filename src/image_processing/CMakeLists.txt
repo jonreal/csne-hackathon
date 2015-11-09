@@ -48,6 +48,7 @@ if (OpenCV_FOUND)
    include_directories(${OpenCV_INCLUDE_DIRS})
 
    ADD_EXECUTABLE(webcam_face_pose_ex webcam_face_pose_ex.cpp)
+   #ADD_EXECUTABLE(webcam_face_box_pose_ex webcam_face_box_pose_ex.cpp)
    TARGET_LINK_LIBRARIES(webcam_face_pose_ex dlib ${OpenCV_LIBS} )
 endif()
 
