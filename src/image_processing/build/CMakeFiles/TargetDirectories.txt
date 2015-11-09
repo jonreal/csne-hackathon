@@ -1,0 +1,7 @@
+/Users/selestebraddock/Desktop/to_the_pi/build/CMakeFiles/webcam_face_pose_ex.dir
+/Users/selestebraddock/Desktop/to_the_pi/build/CMakeFiles/fhog_object_detector_ex_stop_sign.dir
+/Users/selestebraddock/Desktop/to_the_pi/build/CMakeFiles/fhog_object_detector_ex.dir
+/Users/selestebraddock/Desktop/to_the_pi/build/CMakeFiles/fhog_ex.dir
+/Users/selestebraddock/Desktop/to_the_pi/build/CMakeFiles/face_landmark_detection_ex.dir
+/Users/selestebraddock/Desktop/to_the_pi/build/CMakeFiles/face_detection_ex.dir
+/Users/selestebraddock/Desktop/to_the_pi/build/dlib_build/CMakeFiles/dlib.dir
