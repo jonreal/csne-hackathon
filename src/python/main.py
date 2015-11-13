@@ -5,11 +5,11 @@ from datetime import datetime
 
 # Inputs
 sonar_pin = 17
-pwm_pin = 27
-loopFrq = 2
+pwm_pin = 22
+loopFrq = 10
 
 min_dist = 0.0
-max_dist = 500.0
+max_dist = 200.0
 
 # Global
 #pwm = 0
@@ -17,7 +17,7 @@ max_dist = 500.0
 # PWM
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pwm_pin,GPIO.OUT)
-pwm = GPIO.PWM(pwm_pin, 1000)
+pwm = GPIO.PWM(pwm_pin, 5000)
 pwm.start(0.0)
 
 def main():
@@ -37,18 +37,9 @@ def  init():
     GPIO.setup(sonar_pin, GPIO.OUT)
     GPIO.output(sonar_pin, GPIO.LOW)
 
-    # PWM
-#    GPIO.setup(pwm_pin,GPIO.OUT)
-#    pwm = GPIO.PWM(pwm_pin, 50)
-#    pwm.start(0.0)
-#    for i in range(0,100):
-#        pwm.ChangeDutyCycle(i)
-#        time.sleep(0.5)
-
     # Async. Loop with signals
     signal.setitimer(signal.ITIMER_REAL,1.0/loopFrq)
     signal.signal(signal.SIGALRM,loop)
-
 
 
 def sampleSonar():
@@ -71,10 +62,12 @@ def sampleSonar():
         d = t2 - t0;
 
         duty = dist2duty(distance)
-        print 'Distance to obeject ', distance, 'Duty = ', duty
+        print 'Distance = ', distance, 'Duty = ', duty
         if distance < max_dist:
             if duty > 100.0:
                 duty = 100.0
+            if duty < 0.0:
+                duty = 0.0
             pwm.ChangeDutyCycle(duty)
         else:
             pwm.ChangeDutyCycle(0.0)
@@ -83,7 +76,7 @@ def sampleSonar():
         break
 
 def dist2duty(dist):
-    return -100.0/max_dist*dist + 50
+    return -100.0/max_dist*dist + 125
 
 def loop(sig,frame):
     sampleSonar();
