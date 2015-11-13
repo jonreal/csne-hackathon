@@ -11,7 +11,7 @@ Revision is a white cane (i.e., a cane designed to help the blind navigate) equi
 
 A Raspberry Pi 2 is used for on board computation and sensor integration. Revision is also equiped with a webcam.  The webcam was going to be used for online image processing of faces and street signs, however, we didn't have enough time to integrate the image processing software on the Pi.
 
-![](https://github.com/jonreal/csne-hackathon/blob/master/doc/revision%20schematic.png)
+->![](https://github.com/jonreal/csne-hackathon/blob/master/doc/revision%20schematic.png)<-
  
 ## Demo
 Plug a mouse, keyboard, and screen into the Raspberry Pi.  Power the Raspberry Pi with an external battery through the usb-mini port. Start a terminal screen and navigate to csne-hackathon directory:
